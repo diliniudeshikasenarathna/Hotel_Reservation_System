@@ -15,7 +15,12 @@ public class dashboardFormController {
     private AnchorPane pageLoad;
 
     @FXML
-    void btnCustomerOnClick(ActionEvent event) {
+    void btnCustomerOnClick(ActionEvent event) throws IOException {
+        URL resource = this.getClass().getResource("/view/customer_form.fxml");
+        assert resource!=null;
+        Parent load = FXMLLoader.load(resource);
+        pageLoad.getChildren().clear();
+        pageLoad.getChildren().add(load);
 
     }
 

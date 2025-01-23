@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="526.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Rooms.manageRoomFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e2b46" height="62.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="694.0" />
+      <Label alignment="CENTER" layoutX="256.0" layoutY="15.0" text="Manage Reservations" textFill="#f7f4f4">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="549.0" layoutY="177.0" styleClass="btn" stylesheets="@../css/Style.css" text="Add Reservation" />
+   </children>
+</AnchorPane>
