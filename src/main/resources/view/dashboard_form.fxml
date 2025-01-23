@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="714.0" prefWidth="953.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashboardFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7fafc" height="173.0" stroke="#151515" strokeType="INSIDE" style="-fx-fill: #1d3557;" width="953.0" />
+      <JFXButton layoutX="7.0" layoutY="220.0" onAction="#btnManageRoomOnAction" prefHeight="42.0" prefWidth="201.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Manage Rooms" textFill="#faf5f5">
+         <font>
+            <Font size="27.0" />
+         </font></JFXButton>
+      <Label layoutX="286.0" layoutY="52.0" prefHeight="82.0" prefWidth="457.0" text="Hotel Transylvania" textFill="#eae5e5">
+         <font>
+            <Font name="MV Boli" size="42.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="173.0" fitWidth="251.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/3d-halloween-background-with-spooky-castle.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="7.0" layoutY="415.0" onAction="#btnReportsOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Reports" textFill="#faf5f5">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="7.0" layoutY="277.0" onAction="#btnReservationOnClick" prefHeight="49.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Reservation" textFill="#faf5f5">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="7.0" layoutY="338.0" onAction="#btnCustomerOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Customer" textFill="#faf5f5">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="pageLoad" layoutX="250.0" layoutY="177.0" prefHeight="526.0" prefWidth="694.0" />
+   </children>
+</AnchorPane>

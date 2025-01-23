@@ -1,0 +1,111 @@
+#mainPane{
+    -fx-background-color: white;
+}
+
+.btn{
+    -fx-background-color: #0147d4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.button:hover{
+-fx-background-color :#07f7f7;
+
+}
+button:pressed{
+-fx-background-color:#239c9c
+}
+
+.btn2{
+-fx-background-color:  #00C000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+
+}
+
+.textPane{
+    -fx-background-color: white;
+    -fx-border-color: rgba(76, 73, 73, 0.83);
+    -fx-border-radius: 15px;
+}
+.textField{
+    -fx-background-color: white;
+    -fx-prompt-text-fill: #726d6d;
+}
+.textLabel{
+    -fx-background-color: white;
+    -fx-padding: 0 5px 0px 5px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(76, 73, 73, 0.83);;
+}
+.table-view:focused{
+    -fx-background-insets: 0px;
+}
+
+.table-view .column-header{
+    -fx-size:40px;
+    -fx-background-color: #192a56;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell:empty{
+    -fx-background-color: white;
+}
+.table-view .table-row-cell:selected{
+    -fx-background-color:linear-gradient(to right, rgba(119, 8, 245, 0.29), rgba(15, 93, 255, 0.39));
+}
+
+.table-view .table-row-cell:selected *{
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(54, 49, 49);
+}
+
+.actionIcon{
+    -fx-cursor: hand;
+    -fx-text-fill: red;
+}
+
+.dashboard-colour2 {
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+}
+
+.button3{
+    -fx-background-color: #2a1a33;
+    -fx-text-fill: #f8f8f8;
+    -fx-border-color: #b30000;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, #f00, 10, 0.8, 0, 0);
+    -fx-font-family: 'Creepster', sans-serif;
+    -fx-font-size: 16px;
+    -fx-transition: all 0.4s ease-in-out;
+}
+
+.button3:hover {
+    -fx-background-color: #4a2833;
+    -fx-effect: dropshadow(gaussian, #ff0000, 20, 1.0, 0, 0);
+    -fx-transform: scale(1.1);
+}
+
+.round-button {
+    -fx-background-color: #3498db; /* Background color of the button */
+    -fx-text-fill: white; /* Text color */
+    -fx-background-radius: 20; /* Adjust the radius to curve corners */
+    -fx-padding: 10 20; /* Optional: Adjust padding */
+    -fx-border-radius: 20; /* To ensure the border follows the curve */
+    -fx-border-color: #2980b9; /* Optional: Border color */
+    -fx-border-width: 2; /* Optional: Border width */
+}
+
+.italic-button {
+    -fx-font-family: "Georgia"; /* Use a beautiful serif font */
+    -fx-font-size: 18px; /* Adjust font size */
+    -fx-font-style: italic;  Italic style */
+    -fx-font-weight: bold; /* Optional: Bold weight for emphasis */
+    -fx-text-fill: #faf5f5 ; /* Text color */
+    -fx-background-color:  #27436B; /* Background color */
+    -fx-background-radius: 30; /* Rounded corners */
+    -fx-padding: 10 20; /* Padding for better appearance */
+}
+
