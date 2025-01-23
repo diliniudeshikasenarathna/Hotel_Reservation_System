@@ -15,4 +15,9 @@ public class Customers {
     String name;
     String contact;
     Integer loyaltyPoints;
+
+    public Customers(String name, String contact) {
+        this.contact = contact;
+        this.name = name;
+    }
 }
