@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="526.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Booking.bookingsFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#121213" height="540.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="694.0" />
+      <Label layoutX="255.0" layoutY="20.0" prefHeight="27.0" prefWidth="162.0" text="Manage Booking" textFill="#efecec">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="85.0" text="Reservation ID" textFill="#fcf7f7" />
+      <DatePicker fx:id="dateCheckIn" layoutX="32.0" layoutY="306.0" />
+      <DatePicker fx:id="dateCheckOut" layoutX="282.0" layoutY="306.0" />
+      <Label layoutX="291.0" layoutY="281.0" text="Check OUT" textFill="#fcf7f7" />
+      <Label layoutX="32.0" layoutY="281.0" text="Check IN" textFill="#fcf7f7" />
+      <Separator layoutY="41.0" prefHeight="39.0" prefWidth="694.0" />
+      <TableView fx:id="tblReservation" layoutX="28.0" layoutY="176.0" prefHeight="85.0" prefWidth="638.0">
+        <columns>
+          <TableColumn fx:id="colReservationId" prefWidth="96.79995346069336" text="Reservation Id" />
+          <TableColumn fx:id="colCustomerId" prefWidth="80.800048828125" text="Customer Id" />
+            <TableColumn fx:id="colRoomId" prefWidth="82.4000244140625" text="Room Id" />
+            <TableColumn fx:id="colCheckIn" prefWidth="82.4000244140625" text="Check In" />
+            <TableColumn fx:id="colCheckOut" prefWidth="81.60003662109375" text="Check Out" />
+            <TableColumn fx:id="colTotal" prefWidth="108.79998779296875" text="Total" />
+            <TableColumn fx:id="colStatus" prefWidth="124.7999267578125" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="237.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnSearchOnAction" styleClass="btn" stylesheets="@../css/Style.css" text="Search" />
+      <Button layoutX="490.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnAdditionalChargersOnAction" styleClass="btn" stylesheets="@../css/Style.css" text="Calculate Aditional Chargers" />
+      <Label layoutX="32.0" layoutY="353.0" prefHeight="18.0" prefWidth="202.0" text="Early Check In Aditional Chargers :" textFill="#fcf7f7" />
+      <Label layoutX="32.0" layoutY="382.0" prefHeight="18.0" prefWidth="202.0" text="Late Check Out Aditional Chargers :" textFill="#fcf7f7" />
+      <Label fx:id="lblEarlyCheckCharges" layoutX="231.0" layoutY="353.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
+      <Label fx:id="lblLateCheckOutChragers" layoutX="231.0" layoutY="382.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
+      <Label layoutX="32.0" layoutY="409.0" prefHeight="18.0" prefWidth="101.0" text="Total Chargers : " textFill="#fcf7f7" />
+      <Label fx:id="lblTotalCharges" layoutX="120.0" layoutY="409.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
+      <Button layoutX="243.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnReleaseRoomOnAction" prefHeight="39.0" prefWidth="162.0" styleClass="btn2" stylesheets="@../css/Style.css" text="Release Room" />
+      <TextField fx:id="txtReservationID" layoutX="28.0" layoutY="112.0" />
+   </children>
+</AnchorPane>

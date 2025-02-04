@@ -25,7 +25,7 @@
             <Image url="@../img/3d-halloween-background-with-spooky-castle.jpg" />
          </image>
       </ImageView>
-      <JFXButton layoutX="7.0" layoutY="415.0" onAction="#btnReportsOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Reports" textFill="#faf5f5">
+      <JFXButton layoutX="7.0" layoutY="493.0" onAction="#btnReportsOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Reports" textFill="#faf5f5">
          <font>
             <Font size="27.0" />
          </font>
@@ -35,11 +35,16 @@
             <Font size="27.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="7.0" layoutY="338.0" onAction="#btnCustomerOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Customer" textFill="#faf5f5">
+      <JFXButton layoutX="7.0" layoutY="351.0" onAction="#btnCustomerOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Customer" textFill="#faf5f5">
          <font>
             <Font size="27.0" />
          </font>
       </JFXButton>
       <AnchorPane fx:id="pageLoad" layoutX="250.0" layoutY="177.0" prefHeight="526.0" prefWidth="694.0" />
+      <JFXButton layoutX="7.0" layoutY="415.0" onAction="#btnBookingsOnClick" prefHeight="50.0" prefWidth="186.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Bookings" textFill="#faf5f5">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

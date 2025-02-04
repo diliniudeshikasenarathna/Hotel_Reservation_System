@@ -1,19 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Rooms.manageRoomFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="694.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reservations.reservationFormController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e2b46" height="62.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="694.0" />
-      <Label alignment="CENTER" layoutX="256.0" layoutY="15.0" text="Manage Reservations" textFill="#f7f4f4">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#151515" height="526.0" stroke="BLACK" strokeType="INSIDE" width="694.0" />
+      <Label layoutX="240.0" layoutY="15.0" text="Manage Reservation" textFill="#efe7e7">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXButton layoutX="549.0" layoutY="177.0" styleClass="btn" stylesheets="@../css/Style.css" text="Add Reservation" />
+      <Label layoutX="68.0" layoutY="71.0" text="Room Information" textFill="#ffee00">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateCheckIn" layoutX="68.0" layoutY="213.0" promptText="Check In Date" />
+      <DatePicker fx:id="dateCheckOut" layoutX="294.0" layoutY="213.0" promptText="Check Out Date" />
+      <JFXButton layoutX="598.0" layoutY="456.0" onAction="#btnSubmitOnAction" styleClass="btn" text="Submit" />
+      <Label layoutX="67.0" layoutY="263.0" prefHeight="18.0" prefWidth="106.0" text="Total Days  :" textFill="#f2efef">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="289.0" prefHeight="18.0" prefWidth="106.0" text="Price per Night :" textFill="#faf7f7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="529.0" layoutY="103.0" prefHeight="18.0" prefWidth="106.0" text="Room Number" textFill="#f4f1f1" />
+      <Label layoutX="67.0" layoutY="103.0" prefHeight="18.0" prefWidth="106.0" text="Room Type" textFill="#faf5f5" />
+      <ComboBox fx:id="cmbRoomNo" layoutX="529.0" layoutY="128.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbRoomType" layoutX="68.0" layoutY="128.0" prefWidth="150.0" />
+      <Label layoutX="67.0" layoutY="180.0" prefHeight="18.0" prefWidth="106.0" text="Check In Date" textFill="#f7f2f2" />
+      <Label layoutX="293.0" layoutY="180.0" prefHeight="18.0" prefWidth="106.0" text="Check Out Date" textFill="#f2f0f0" />
+      <Label layoutX="67.0" layoutY="318.0" prefHeight="18.0" prefWidth="106.0" text="Total Amount :" textFill="#faf4f4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="365.0" text="Customer Details" textFill="#ffee00">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="529.0" layoutY="180.0" prefHeight="18.0" prefWidth="106.0" text="Reservation Status" textFill="#faf7f7" />
+      <ComboBox fx:id="cmbStatus" layoutX="529.0" layoutY="213.0" prefWidth="150.0" />
+      <TextField fx:id="txtCustomerId" layoutX="68.0" layoutY="405.0" promptText="Customer ID" />
+      <TextField fx:id="txtCustomerName" disable="true" layoutX="68.0" layoutY="456.0" promptText="Customer Name" />
+      <TextField fx:id="txtEmail" disable="true" layoutX="249.0" layoutY="456.0" prefHeight="26.0" prefWidth="194.0" promptText="Email" />
+      <Separator layoutY="343.0" prefHeight="12.0" prefWidth="694.0" />
+      <Label fx:id="lblTotalDays" layoutX="143.0" layoutY="263.0" prefHeight="18.0" prefWidth="106.0" text="00" textFill="#fcfafa">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPricePerNight" layoutX="165.0" layoutY="289.0" prefHeight="18.0" prefWidth="106.0" text="00" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="165.0" layoutY="318.0" prefHeight="18.0" prefWidth="106.0" text="00" textFill="#fffcfc">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="294.0" layoutY="103.0" prefHeight="18.0" prefWidth="106.0" text="Price " textFill="#f4f1f1" />
+      <ComboBox fx:id="cmbPrice" layoutX="293.0" layoutY="128.0" prefHeight="26.0" prefWidth="159.0" />
+      <JFXButton layoutX="592.0" layoutY="294.0" onAction="#btnCalculateOnAction" styleClass="btn" text="Calculate" />
+      <JFXButton layoutX="266.0" layoutY="405.0" onAction="#btnSearchOnAction" styleClass="btn" text="Search" />
    </children>
 </AnchorPane>

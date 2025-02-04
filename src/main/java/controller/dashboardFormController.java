@@ -40,8 +40,21 @@ public class dashboardFormController {
     }
 
     @FXML
-    void btnReservationOnClick(ActionEvent event) {
+    void btnReservationOnClick(ActionEvent event) throws IOException {
+        URL resource = this.getClass().getResource("/view/reservation_form.fxml");
+        assert resource!=null;
+        Parent load = FXMLLoader.load(resource);
+        pageLoad.getChildren().clear();
+        pageLoad.getChildren().add(load);
+
 
     }
 
+    public void btnBookingsOnClick(ActionEvent actionEvent) throws IOException {
+        URL resource = this.getClass().getResource("/view/bookings_form.fxml");
+        assert resource!=null;
+        Parent load = FXMLLoader.load(resource);
+        pageLoad.getChildren().clear();
+        pageLoad.getChildren().add(load);
+    }
 }
