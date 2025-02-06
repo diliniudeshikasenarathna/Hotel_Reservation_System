@@ -99,8 +99,8 @@ public class reservationFormController implements Initializable {
             new Alert(Alert.AlertType.ERROR,"Reservation Failed").show();
         }
 
-        String availability_status="Occupied";
-        String SQLROOMS="Update rooms set  availability_status="+"'"+availability_status+"'"+ "room_id="+roomId;
+        String availableStatus="Occupied";
+        String SQLROOMS="Update rooms set  availability_status="+"'"+availableStatus+"'"+ " where room_id="+roomId;
         DBConnection.getInstance().getConnection().createStatement().executeUpdate(SQLROOMS);
 
 
@@ -170,7 +170,7 @@ public class reservationFormController implements Initializable {
 
 
      ArrayList<String> roomNoList = new ArrayList<>();
-     String SQL= "select room_number from rooms where room_type="+"'"+roomType+"'"+" and price_per_night="+roomPrice +"and availability_status="+"'"+status+"'"  ;
+     String SQL= "select room_number from rooms where room_type="+"'"+roomType+"'"+" and price_per_night="+roomPrice +"and availability_status="+"'"+status+"'" ;
      try {
          Connection connection = DBConnection.getInstance().getConnection();
          Statement statement = connection.createStatement();

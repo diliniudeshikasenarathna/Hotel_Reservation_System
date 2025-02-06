@@ -22,8 +22,8 @@
       <Label layoutX="32.0" layoutY="85.0" text="Reservation ID" textFill="#fcf7f7" />
       <DatePicker fx:id="dateCheckIn" layoutX="32.0" layoutY="306.0" />
       <DatePicker fx:id="dateCheckOut" layoutX="282.0" layoutY="306.0" />
-      <Label layoutX="291.0" layoutY="281.0" text="Check OUT" textFill="#fcf7f7" />
-      <Label layoutX="32.0" layoutY="281.0" text="Check IN" textFill="#fcf7f7" />
+      <Label layoutX="291.0" layoutY="281.0" text="Out Date" textFill="#fcf7f7" />
+      <Label layoutX="32.0" layoutY="281.0" text="IN Date" textFill="#fcf7f7" />
       <Separator layoutY="41.0" prefHeight="39.0" prefWidth="694.0" />
       <TableView fx:id="tblReservation" layoutX="28.0" layoutY="176.0" prefHeight="85.0" prefWidth="638.0">
         <columns>
@@ -37,14 +37,14 @@
         </columns>
       </TableView>
       <Button layoutX="237.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnSearchOnAction" styleClass="btn" stylesheets="@../css/Style.css" text="Search" />
-      <Button layoutX="490.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnAdditionalChargersOnAction" styleClass="btn" stylesheets="@../css/Style.css" text="Calculate Aditional Chargers" />
-      <Label layoutX="32.0" layoutY="353.0" prefHeight="18.0" prefWidth="202.0" text="Early Check In Aditional Chargers :" textFill="#fcf7f7" />
-      <Label layoutX="32.0" layoutY="382.0" prefHeight="18.0" prefWidth="202.0" text="Late Check Out Aditional Chargers :" textFill="#fcf7f7" />
-      <Label fx:id="lblEarlyCheckCharges" layoutX="231.0" layoutY="353.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
-      <Label fx:id="lblLateCheckOutChragers" layoutX="231.0" layoutY="382.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
-      <Label layoutX="32.0" layoutY="409.0" prefHeight="18.0" prefWidth="101.0" text="Total Chargers : " textFill="#fcf7f7" />
-      <Label fx:id="lblTotalCharges" layoutX="120.0" layoutY="409.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
+      <Button layoutX="32.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnAdditionalChargersOnAction" styleClass="btn" stylesheets="@../css/Style.css" text="Calculate Aditional Chargers" />
+      <Label layoutX="40.0" layoutY="399.0" prefHeight="18.0" prefWidth="119.0" text="Additional Chargers :" textFill="#fcf7f7" />
+      <Label fx:id="lblAdditionalChargers" layoutX="167.0" layoutY="399.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
+      <Label layoutX="40.0" layoutY="437.0" prefHeight="18.0" prefWidth="101.0" text="Total Chargers : " textFill="#fcf7f7" />
+      <Label fx:id="lblTotalCharges" layoutX="130.0" layoutY="437.0" prefHeight="18.0" prefWidth="94.0" text="0.00" textFill="#fcf7f7" />
       <Button layoutX="243.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnReleaseRoomOnAction" prefHeight="39.0" prefWidth="162.0" styleClass="btn2" stylesheets="@../css/Style.css" text="Release Room" />
       <TextField fx:id="txtReservationID" layoutX="28.0" layoutY="112.0" />
+      <Button layoutX="482.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnOUTOnAction" styleClass="btn" stylesheets="@../css/Style.css" text="OUT" />
+      <Button layoutX="217.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnINOnAction" prefHeight="26.0" prefWidth="34.0" styleClass="btn" stylesheets="@../css/Style.css" text="IN" />
    </children>
 </AnchorPane>

@@ -14,12 +14,16 @@ import model.Bookings;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class bookingsFormController implements Initializable {
 
     public TextField txtReservationID;
+    public Label lblAdditionalChargers;
     @FXML
     private TableColumn<?, ?> colCheckIn;
 
@@ -64,6 +68,22 @@ public class bookingsFormController implements Initializable {
     @FXML
     void btnAdditionalChargersOnAction(ActionEvent event) {
 
+        int  reservationId = Integer.parseInt(txtReservationID.getText());
+        LocalDate inDate = dateCheckIn.getValue();
+        LocalDate outDate = dateCheckOut.getValue();
+
+         Double chrages=new bookingController().calculateExtraCharges(reservationId,inDate,outDate);
+          Double total=new bookingController().getTotalPrice(reservationId);
+
+         lblAdditionalChargers.setText(chrages.toString());
+
+         Double fullCost=total+chrages;
+         lblTotalCharges.setText(fullCost.toString());
+
+
+
+
+
     }
 
     @FXML
@@ -99,4 +119,27 @@ public class bookingsFormController implements Initializable {
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
     }
+
+
+
+    public void btnOUTOnAction(ActionEvent actionEvent) {
+
+        int  reservationId = Integer.parseInt(txtReservationID.getText());
+        LocalDate outDate = dateCheckOut.getValue();
+       boolean isCheckOutDateAdd= new bookingController().updateCheckOutDate(reservationId,outDate);
+        LocalDate checkInDate = new bookingController().getCheckInDate(reservationId);
+        dateCheckIn.setValue(checkInDate);
+
+
+
+    }
+
+    public void btnINOnAction(ActionEvent actionEvent) {
+        int reservationId = Integer.parseInt(txtReservationID.getText());
+        LocalDate inDate = dateCheckIn.getValue();
+
+        boolean isCheckInAdd = new bookingController().insertActualCheckingDate(reservationId, inDate);
+
+    }
+
 }

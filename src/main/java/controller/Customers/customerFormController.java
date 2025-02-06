@@ -1,6 +1,6 @@
 package controller.Customers;
 
-import com.jfoenix.controls.JFXTextField;
+
 import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customers;
 
@@ -21,6 +22,12 @@ import java.util.ResourceBundle;
 
 public class customerFormController implements Initializable {
 
+    @FXML
+    public TextField txtId;
+    @FXML
+    public TextField txtName;
+    @FXML
+    public TextField txtContact;
     @FXML
     private TableColumn<?, ?> colContact;
 
@@ -36,14 +43,6 @@ public class customerFormController implements Initializable {
     @FXML
     private TableView<Customers> tblCustomerDetails;
 
-    @FXML
-    private JFXTextField txtContact;
-
-    @FXML
-    private JFXTextField txtId;
-
-    @FXML
-    private JFXTextField txtName;
 
     @FXML
     void btnAddCustomerOnAction(ActionEvent event) throws SQLException {
@@ -59,7 +58,7 @@ public class customerFormController implements Initializable {
         psTm.setString(2, customers.getContact());
         psTm.executeUpdate();
 
-        new Alert(Alert.AlertType.INFORMATION,"Customer Added Successfully!!!!");
+        new Alert(Alert.AlertType.INFORMATION,"Customer Added Successfully!!!!").show();
 
         loadCustomerDetails();
 
