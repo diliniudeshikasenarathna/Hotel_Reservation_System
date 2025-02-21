@@ -252,4 +252,9 @@ public class reservationFormController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+    public void btnPrintBillOnAction(ActionEvent actionEvent) {
+
+
+    }
 }

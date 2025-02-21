@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -77,5 +78,6 @@
       <ComboBox fx:id="cmbPrice" layoutX="293.0" layoutY="128.0" prefHeight="26.0" prefWidth="159.0" />
       <JFXButton layoutX="592.0" layoutY="294.0" onAction="#btnCalculateOnAction" styleClass="btn" text="Calculate" />
       <JFXButton layoutX="266.0" layoutY="405.0" onAction="#btnSearchOnAction" styleClass="btn" text="Search" />
+      <Button layoutX="573.0" layoutY="487.0" mnemonicParsing="false" onAction="#btnPrintBillOnAction" prefHeight="26.0" prefWidth="87.0" styleClass="btn2" stylesheets="@../css/Style.css" text="Print Bill" />
    </children>
 </AnchorPane>

@@ -13,11 +13,19 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customers;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class customerFormController implements Initializable {
@@ -47,24 +55,43 @@ public class customerFormController implements Initializable {
     @FXML
     void btnAddCustomerOnAction(ActionEvent event) throws SQLException {
 
-        String name=txtName.getText();
-        String contact=txtContact.getText();
+        String contact1=txtContact.getText();
 
-        Customers customers = new Customers(name,contact);
+        String SQL2="select contact_details from customers";
+        ResultSet resultSet = DBConnection.getInstance().getConnection().createStatement().executeQuery(SQL2);
+        List<String> contactList=new ArrayList<>();
 
-        String SQL="insert into customers (name,contact_details) values (?,?)";
-        PreparedStatement psTm = DBConnection.getInstance().getConnection().prepareStatement(SQL);
-        psTm.setString(1,  customers.getName());
-        psTm.setString(2, customers.getContact());
-        psTm.executeUpdate();
+        while (resultSet.next()){
+            contactList.add(resultSet.getString(1));
+        }
 
-        new Alert(Alert.AlertType.INFORMATION,"Customer Added Successfully!!!!").show();
+        if(!contactList.contains(contact1)){
+            String name=txtName.getText();
+            String contact=txtContact.getText();
 
-        loadCustomerDetails();
+            Customers customers = new Customers(name,contact);
 
-        loadCustomerId();
-        txtName.setText("");
-        txtContact.setText("");
+            String SQL="insert into customers (name,contact_details) values (?,?)";
+            PreparedStatement psTm = DBConnection.getInstance().getConnection().prepareStatement(SQL);
+            psTm.setString(1,  customers.getName());
+            psTm.setString(2, customers.getContact());
+            psTm.executeUpdate();
+
+            new Alert(Alert.AlertType.INFORMATION,"Customer Added Successfully!!!!").show();
+
+            loadCustomerDetails();
+
+            loadCustomerId();
+            txtName.setText("");
+            txtContact.setText("");
+        }
+else {
+    new Alert(Alert.AlertType.ERROR,"Customer Already exist..........").show();
+        }
+
+
+
+
 
     }
 
@@ -107,6 +134,34 @@ public class customerFormController implements Initializable {
             }
             tblCustomerDetails.setItems(customerDetailsList);
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void btnGetCustomerReportOnAction(ActionEvent actionEvent) {
+
+
+        try {
+            JasperDesign design = JRXmlLoader.load("src/main/resources/reports/Hotel_Customer_Report.jrxml");
+
+
+            /// excute query manual,only one customer search
+
+          //  JRDesignQuery jrDesignQuery = new JRDesignQuery();
+          //  jrDesignQuery.setText("select * from customers where customerid='C001'");
+          //  design.setQuery(jrDesignQuery);
+
+            /// ///
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+
+/// ///////auto matically save to file structure
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"customers_report.pdf");
+/// ///////////////////////////
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException | SQLException e) {
             throw new RuntimeException(e);
         }
     }
