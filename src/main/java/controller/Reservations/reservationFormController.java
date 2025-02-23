@@ -7,6 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
 import java.sql.*;
@@ -18,6 +23,7 @@ import java.util.ResourceBundle;
 public class reservationFormController implements Initializable {
 
     public ComboBox cmbPrice;
+    public TextField txtReservationId;
 
     @FXML
     private ComboBox<String> cmbRoomNo;
@@ -108,6 +114,7 @@ public class reservationFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadReservationId();
         loadRoomType();
         setReservationStatus();
 
@@ -125,6 +132,17 @@ public class reservationFormController implements Initializable {
 
     }
 
+    private void loadReservationId() {
+
+        String SQL= "select count(reservation_id) from reservations";
+        try {
+            ResultSet resultSet = DBConnection.getInstance().getConnection().createStatement().executeQuery(SQL);
+            resultSet.next();
+            txtReservationId.setText(String.valueOf(resultSet.getInt(1)+1));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     private void loadRoomPriceList(String type) throws SQLException {
@@ -254,6 +272,32 @@ public class reservationFormController implements Initializable {
     }
 
     public void btnPrintBillOnAction(ActionEvent actionEvent) {
+        try {
+            int reservationId=Integer.parseInt(txtReservationId.getText())-1;
+            JasperDesign design = JRXmlLoader.load("src/main/resources/reports/customer_bill.jrxml");
+
+
+            /// excute query manual,only one customer search
+
+            JRDesignQuery jrDesignQuery = new JRDesignQuery();
+            jrDesignQuery.setText("select * from reservations where reservation_id="+"'"+reservationId+"'");
+            design.setQuery(jrDesignQuery);
+
+            /// ///
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+
+/// ///////auto matically save to file structure
+          //////  JasperExportManager.exportReportToPdfFile(jasperPrint,"customers_bill.pdf");
+/// ///////////////////////////
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
 
 
     }

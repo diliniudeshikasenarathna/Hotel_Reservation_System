@@ -147,7 +147,7 @@ else {
 
             /// excute query manual,only one customer search
 
-          //  JRDesignQuery jrDesignQuery = new JRDesignQuery();
+          // // JRDesignQuery jrDesignQuery = new JRDesignQuery();
           //  jrDesignQuery.setText("select * from customers where customerid='C001'");
           //  design.setQuery(jrDesignQuery);
 

@@ -5,22 +5,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="714.0" prefWidth="953.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashboardFormController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7fafc" height="173.0" stroke="#151515" strokeType="INSIDE" style="-fx-fill: #1d3557;" width="953.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7fafc" height="173.0" stroke="#141414" strokeType="INSIDE" style="-fx-fill: #1d3557;" width="953.0" />
       <JFXButton layoutX="7.0" layoutY="220.0" onAction="#btnManageRoomOnAction" prefHeight="42.0" prefWidth="201.0" styleClass="italic-button" stylesheets="@../css/Style.css" text="Manage Rooms" textFill="#faf5f5">
          <font>
             <Font size="27.0" />
          </font></JFXButton>
-      <Label layoutX="286.0" layoutY="52.0" prefHeight="82.0" prefWidth="457.0" text="Hotel Transylvania" textFill="#eae5e5">
-         <font>
-            <Font name="MV Boli" size="42.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="173.0" fitWidth="251.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="179.0" fitWidth="256.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/3d-halloween-background-with-spooky-castle.jpg" />
          </image>
@@ -46,5 +44,28 @@
             <Font size="27.0" />
          </font>
       </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="173.0" layoutX="257.0" stroke="BLACK" strokeType="INSIDE" width="694.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.4100378715630734">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0975048765540123" green="0.27010980248451233" blue="0.43157893419265747" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="353.0" layoutY="55.0" prefHeight="82.0" prefWidth="402.0" text="Hotel Transylvania" textFill="#eae5e5">
+         <font>
+            <Font name="MV Boli" size="42.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
