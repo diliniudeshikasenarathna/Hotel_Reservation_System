@@ -8,7 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class Users {
-    Integer id;
     String userName;
     String password;
     String role;

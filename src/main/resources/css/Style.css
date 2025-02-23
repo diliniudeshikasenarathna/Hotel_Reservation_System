@@ -31,6 +31,8 @@ button:pressed{
     -fx-background-color: white;
     -fx-prompt-text-fill: #726d6d;
 }
+
+
 .textLabel{
     -fx-background-color: white;
     -fx-padding: 0 5px 0px 5px;
@@ -85,7 +87,7 @@ button:pressed{
 .button3:hover {
     -fx-background-color: #4a2833;
     -fx-effect: dropshadow(gaussian, #ff0000, 20, 1.0, 0, 0);
-    -fx-transform: scale(1.1);
+
 }
 
 .round-button {
